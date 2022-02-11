@@ -17,4 +17,4 @@ def checkSpeed(func, r):
         for _ in range(r):
             func()
     end = pf()
-    return f'{((end-start)/r):.5f}'
+    return f'{((end-start)/r):.8f}'

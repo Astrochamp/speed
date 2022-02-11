@@ -1,28 +1,26 @@
-import pathlib
-from setuptools import setup
+import setuptools
 
-# The directory containing this file
-HERE = pathlib.Path(__file__).parent
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
 
-# The text of the README file
-README = (HERE / "README.md").read_text()
-
-# This call to setup() does all the work
-setup(
-    name="speed",
-    version="0.1.0",
-    description="Calculates average running time of a function",
-    long_description=README,
-    long_description_content_type="text/markdown",
-    url="https://github.com/Astrochamp/speed",
+setuptools.setup(
+    name="execspeed",
+    version="0.0.1",
     author="Ivan O'Connor",
     author_email="ivanoconnor@hotmail.co.uk",
-    license="MIT",
+    description="Simple tool for finding average function execution time",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://github.com/Astrochamp/speed",
+    project_urls={
+        "Bug Tracker": "https://github.com/Astrochamp/speed/issues",
+    },
     classifiers=[
-        "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.10",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
     ],
-    packages=["speed"],
-    include_package_data=True,
+    package_dir={"": "speed"},
+    packages=setuptools.find_packages(where="speed"),
+    python_requires=">=3.6",
 )
