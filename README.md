@@ -18,7 +18,8 @@ def myFunc():
   print(x)
 
 n = 10
-print(checkSpeed(myFunc, n)) # Repeats myFunc n (= 10) times and returns the average execution time. A higher value of n will likely result in a more accurate value, but will take longer
+print(checkSpeed(myFunc, n)) # Repeats myFunc n (= 10) times and returns the average execution time. 
+# A higher value of n will likely result in a more accurate value, but will take longer.
 
 
 >>> 0.00003339

@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="execspeed",
-    version="0.0.1",
+    version="0.0.3",
     author="Ivan O'Connor",
     author_email="ivanoconnor@hotmail.co.uk",
     description="Simple tool for finding average function execution time",
@@ -20,7 +20,6 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    package_dir={"": "speed"},
-    packages=setuptools.find_packages(where="speed"),
+    packages=setuptools.find_packages(),
     python_requires=">=3.6",
 )
