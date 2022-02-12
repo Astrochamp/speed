@@ -5,7 +5,7 @@ A simple package for calculating the execution time of a function in a Python fi
 ## Usage:
 
 `checkSpeed(function, r)`
-where `function` is any function from your Python file and `r` is the number of times to run it. The average execution time is returned rather than printed.
+where `function` is any function from your Python file and `r` is the number of times to run it. The average execution time is printed.
 
 ## Example:
 ```py
@@ -18,7 +18,8 @@ def myFunc():
   print(x)
 
 n = 10
-print(checkSpeed(myFunc, n)) # Repeats myFunc n (= 10) times and returns the average execution time. 
+checkSpeed(myFunc, n) 
+# Repeats myFunc n (= 10) times and prints the average execution time. 
 # A higher value of n will likely result in a more accurate value, but will take longer.
 
 
