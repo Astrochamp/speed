@@ -4,6 +4,10 @@ A simple package for calculating the execution time of a function in a Python fi
 
 ## Usage:
 
+### Installation
+`pip install execspeed`
+
+### Using
 * `speed.showSpeed(function, r)`
   where `function` is any function from your Python file and `r` is the number of times to run it. 
   Prints average execution time.
