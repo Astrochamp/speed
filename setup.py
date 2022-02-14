@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="execspeed",
-    version="0.0.9",
+    version="0.1.0",
     author="Ivan O'Connor",
     author_email="ivanoconnor@hotmail.co.uk",
     description="Simple tool for finding average function execution time",

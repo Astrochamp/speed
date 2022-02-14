@@ -8,11 +8,11 @@ A simple package for calculating the execution time of a function in a Python fi
 `pip install execspeed`
 
 ### Using
-* `speed.showSpeed(function, r)`
+* `speed.showSpeed(function, r, <optional>, <extra>, <args>...)`
   where `function` is any function from your Python file and `r` is the number of times to run it. 
   Prints average execution time.
 
-* `speed.getSpeed(function, r)`
+* `speed.getSpeed(function, r, <optional>, <extra>, <args>...)`
   again, `function` is any function from your Python file and `r` is the number of times to run it. 
   Returns average execution time as a float.
 
@@ -20,15 +20,16 @@ A simple package for calculating the execution time of a function in a Python fi
 ```py
 import speed
 
-def myFunc():
-  x = 2
+def myFunc(start, message):
+  x = start
   for i in range(100):
     x *= i
-  print(x)
+  print(f"{message} {x}")
 
 n = 10
-speed.showSpeed(myFunc, n) 
-# Repeats myFunc n (= 10) times and prints the average execution time. 
+speed.showSpeed(myFunc, n, 3, "Your number is:") 
+# Repeats myFunc n (= 10) times and prints the average execution time.
+# Passed (3) and "Your number is:" to myFunc() -- any number of arguments can now be passed to your function this way 
 # A higher value of n will likely result in a more accurate value, but will take longer.
 
 
@@ -39,7 +40,6 @@ speed.showSpeed(myFunc, n)
 
 * The output from `getSpeed()` is a float.
 * While `showSpeed()` or `getSpeed()` run a function, they block printing within that function so the terminal isn't filled with potentially hundreds of prints.
-* Currently, passing arguments into the `function` argument e.g. `showSpeed(myFunc(a,b), 100)` **doesn't** work. I'll add this soon, with the syntax: `showSpeed(function, r, <other>, <arguments>, <here>...)`, which will check the execution time of `function(other, arguments, here...)`
 
 
 ### [Create an issue](https://github.com/Astrochamp/speed/issues) if you have any feedback / bugs you want to report
