@@ -1,4 +1,10 @@
-def showSpeed(func, r):
+def showSpeed(func, r, *args):
+    '''Usage: showSpeed(function, runs)
+    You can also pass arguments into <function> like so:
+    showSpeed(function, runs, <other>, <args>, <here> ...)
+
+    showSpeed() prints the average execution time of <function> over <runs> runs
+    '''
     def formatted(f):
         import re
         s = str(f)
@@ -26,13 +32,19 @@ def showSpeed(func, r):
     start = pf()
     with noPrint():
         for _ in range(r):
-            func()
+            func(*args)
     end = pf()
     if garbage:
         gc.enable()
     print(f'{formatted((end-start)/r)}')
 
-def getSpeed(func, r):
+def getSpeed(func, r, *args):
+    '''Usage: getSpeed(function, runs)
+    You can also pass arguments into <function> like so:
+    getSpeed(function, runs, <other>, <args>, <here> ...)
+
+    getSpeed() returns the average execution time of <function> over <runs> runs, as a float
+    '''
     import os, sys, gc
     class noPrint:
         def __enter__(self):
@@ -47,7 +59,7 @@ def getSpeed(func, r):
     start = pf()
     with noPrint():
         for _ in range(r):
-            func()
+            func(*args)
     end = pf()
     if garbage:
         gc.enable()
